@@ -10,18 +10,13 @@ import java.io.PrintWriter;
 public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.setContentType("text/html");
-//
-//        // Hello
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//        out.println("<h1> Welcom........... </h1>");
-//        out.println("</body></html>");
+        System.out.println("Get method............");
         response.sendRedirect("./test.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("Post method............");
+        response.sendRedirect("./test.jsp");
     }
 }

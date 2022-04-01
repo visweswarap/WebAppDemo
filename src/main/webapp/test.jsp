@@ -12,7 +12,7 @@
 </head>
 <body>
     <p> sdfb adf sdfg afg gf gefg agfv</p>
-    <form action="/TestServlet" method="post">
+    <form action="${pageContext.request.contextPath}/TestServlet" method="post">
         User Name: <input type="text" name="username">
         <br/>
         Password: <input type="password" name="password">
