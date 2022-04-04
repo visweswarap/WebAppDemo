@@ -17,6 +17,30 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Post method............");
-        response.sendRedirect("./test.jsp");
+        String message = null;
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        if (validateLogin(user, pass)){
+            response.sendRedirect("success.jsp");
+        } else {
+            response.sendRedirect("error.jsp");
+        }
+        // response.setContentType("text/html");
+
+//        // Hello
+//        PrintWriter out = response.getWriter();
+//        out.println("<html><body>");
+//        out.println("<h1> "+ message +" </h1>");
+//        out.println("</body></html>");
+    }
+
+    boolean validateLogin(String username, String password) {
+        String user = "john";
+        String pass = "doe";
+        if(user.equals(username) && pass.equals(password)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
