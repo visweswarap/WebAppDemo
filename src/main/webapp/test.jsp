@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="https://claz.org/xyz" prefix="claz"%>
+
 <html>
 <head>
     <title>My Title</title>
@@ -11,5 +13,8 @@
         Password: <input type="password" name="password">
         <input type="submit" value="Submit">
     </form>
+    <jsp:include page="error.jsp" />
+
+    <claz:message />
 </body>
 </html>
